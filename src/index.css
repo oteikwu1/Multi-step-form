@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+ --blue-950: hsl(213, 96%, 18%);
+ --Primary-Blue-950: hsl(213, 96%, 18%);
+ --Primary-Purple-600: hsl(243, 100%, 62%); 
+ --Primary-Blue-300: hsl(228, 100%, 84%); 
+ --Primary-Blue-200: hsl(206, 94%, 87%);
+ --Primary-Red-500: hsl(354, 84%, 57%);
+
+--Neutral-Grey-500: hsl(231, 11%, 63%);
+--Neutral-Purple-200: hsl(229, 24%, 87%);
+--Neutral-Blue-100: hsl(218, 100%, 97%);
+--Neutral-Blue-50: hsl(231, 100%, 99%);
+--Neutral-White: hsl(0, 100%, 100%);
+--Main-font: "Ubuntu", sans-serif;
+--Font-weight-sm: 400;
+--Font-weight-md: 500;
+--Font-weight-b: 700;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+    --social-bg: rgba(47, 48, 58, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+ 
+}
+
+body {
+  margin: 0;
+}
+
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+
+
+
