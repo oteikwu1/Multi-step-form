@@ -1,0 +1,58 @@
+.image {
+    background: url(../assets/bg-sidebar-desktop.svg);
+    height: 550px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 30px 70px 0px 20px;
+    border-radius: 8px;
+}
+
+.side-bar-container>div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 1.2em;
+}
+
+.step-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid var(--Primary-Blue-300);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.step-circle span {
+    color: var(--Neutral-White);
+    font-size: 1em;
+    font-family: var(--Main-font);
+    font-weight: var(--Font-weight-md);
+}
+
+.step-circle.active {
+    background-color: var(--Primary-Blue-300);
+    border: none;
+}
+
+.step-circle.active span {
+    color: var(--blue-950);
+}
+
+.step-label {
+    margin: 6px 0;
+    font-size: 1em;
+    font-family: var(--Main-font);
+    color: var(--Primary-Blue-200);
+    text-transform: uppercase;
+}
+
+.step-title {
+    color: #fff;
+    font-size: 1em;
+    text-transform: uppercase;
+    font-family: var(--Main-font);
+}

@@ -1,0 +1,12 @@
+.main-container {
+    display: flex;
+    padding: 1em;
+    gap: 6em;
+    background-color: var(--Neutral-White);
+}
+
+.plan-container {
+    display: flex;
+    gap: 1em;
+    margin: 2em 0;
+}

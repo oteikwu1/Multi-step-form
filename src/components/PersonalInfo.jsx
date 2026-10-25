@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import "./PersonalInfo.css"
 import Button from "./Button";
 import './Button.css'
+import SideBar from "./SideBar";
+import './SideBar.css'
+
 
 const PersonalInfo = () => {
   const navigate = useNavigate()
@@ -57,38 +60,7 @@ const PersonalInfo = () => {
   
     return ( 
         <section className="container">
-        <div className="image">
-          <div className="side-bar-container">
-         <div className="step-one-container">
-           <div className="one"><span>1</span></div>
-           <div className="step-one-content">
-            <p className="step-one">Step 1</p>
-            <h2 className="step-one-title">your info</h2>
-           </div>
-         </div>
-          <div className="step-two-container">
-           <div className="two"><span>2</span></div>
-           <div className="step-two-content">
-            <p className="step-two">Step 2</p>
-            <h2 className="step-two-title">Select  plan</h2>
-           </div>
-         </div>
-          <div className="step-three-container">
-           <div className="three"><span>3</span></div>
-           <div className="step-three-content">
-            <p className="step-three">Step 3</p>
-            <h2 className="step-three-title">Add-ons</h2>
-           </div>
-         </div>
-          <div className="step-four-container">
-           <div className="four"><span>4</span></div>
-           <div className="step-one-content">
-            <p className="step-one">Step 4</p>
-            <h2 className="step-one-title">summary</h2>
-           </div>
-         </div>
-         </div>
-        </div>
+        <SideBar activeStep={1} />
         
         <div className="detail">
         <h1 className="info-title">Personal Info</h1>
@@ -103,6 +75,7 @@ const PersonalInfo = () => {
           </div>
             <input type="text"
             id="name"
+            name="name"
              placeholder="Vanessa Mint"
             value={formData.name}
             onChange={handleChange}
@@ -116,6 +89,7 @@ const PersonalInfo = () => {
             </div>
             <input type="email"
             id="email"
+            name="email"
             placeholder="vanessamint@"
             value={formData.email}
             onChange={handleChange}
@@ -128,18 +102,19 @@ const PersonalInfo = () => {
             </div>
             <input type="tel"
               placeholder="e.g +1234 567 890"
-              name=""
+              name="phone"
               id="number" 
                value={formData.phone}
                onChange={handleChange}
               />
           </div>
-        </form>
-       <div className="btn-container">
+           <div className="btn-container">
             <Button variant="primary" type="submit">
               Next Step
             </Button>
          </div>
+        </form>
+      
         </div>
     </section>
     )
