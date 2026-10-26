@@ -56,3 +56,23 @@
     text-transform: uppercase;
     font-family: var(--Main-font);
 }
+
+@media screen and (max-width: 600px) {
+    .image {
+        background: url(../assets/bg-sidebar-mobile.svg);
+        height: 250px;
+    }
+
+    .step-circle {
+        height: 40px;
+         width: 40px;
+    }
+
+    .step-label {
+        display: none;
+    }
+
+    .step-title {
+        display: none;
+    }
+}

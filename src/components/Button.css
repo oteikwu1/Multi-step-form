@@ -1,9 +1,9 @@
 .btn {
-    border: none;
-    cursor: pointer;
-    border-radius: 1em;
-    padding: 12px 24px;
-    font-family: var(--Main-font);
+  border: none;
+  cursor: pointer;
+  border-radius: 1em;
+  padding: 12px 24px;
+  font-family: var(--Main-font);
 }
 
 .btn-primary {
@@ -11,4 +11,10 @@
   border-radius: 6px;
   color: var(--Neutral-White);
   font-weight: var(--Font-weight-b);
+}
+
+.btn-secondary {
+  color: var(--Neutral-Purple-200);
+  background-color: brown;
+  font-size: 4em;
 }

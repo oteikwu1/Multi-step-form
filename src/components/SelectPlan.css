@@ -11,6 +11,19 @@
     margin: 2em 0;
 }
 
+.select-plan-heading {
+    font-family: var(--Main-font);
+    color: var(--blue-950);
+    margin: 6px 0;
+    font-size: 2em;
+}
+
+.select-plan-title {
+    font-family: var(--Main-font);
+    color: var(--Neutral-Purple-200);
+    color: blueviolet;
+}
+
 .plan-card {
     border: 2px solid var(--Neutral-Purple-200);
     width: 120px;
@@ -116,4 +129,9 @@ input:checked~.yearly-text {
 .btn-container {
     display: flex;
     justify-content: space-between;
+}
+
+
+@media screen and (max-width: 600px) {
+    
 }

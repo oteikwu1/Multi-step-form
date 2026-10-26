@@ -1,11 +1,13 @@
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import SideBar from "./SideBar"
 import arcade from '../assets/icon-arcade.svg'
 import advance from '../assets/icon-advanced.svg'
 import pro from '../assets/icon-pro.svg'
 import Button from "./Button"
+import './Button.css'
 import './SelectPlan.css'
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+
 
 const SelectPlan = () => {
   const navigate = useNavigate();
@@ -22,8 +24,10 @@ const SelectPlan = () => {
       <SideBar activeStep={2} />
 
       <div className="content-container">
-          <h2>Select a plan</h2>
-          <p>You have the option of monthly or yearly billing</p>
+          <h1 className="select-plan-heading">Select a plan</h1>
+          <p className="select-plan-title">
+            You have the option of monthly or yearly billing
+          </p>
           
         <div className="plan-container">
             <div className={`plan-card ${selectPLan === "arcade" ? "active" : ""}`}
@@ -63,19 +67,20 @@ const SelectPlan = () => {
           <p className="yearly-text">Yearly</p>
         </div>
 
-        <div className="btn-container">
-          <div className="next-btn">
-            <Button variant="btn-primary" type="button" onClick={() => navigate(-1)}>
-              Go Back
-            </Button>
-          </div>
-
-         <div className="back-btn">
-            <Button onClick={() => navigate("/addons")}>
-              Next Step
-            </Button>
-         </div>
+       <div className="btn-container">
+        <div className="back-btn">
+           <Button variant="btn-secondary" 
+           onClick={() => navigate(-1)}>
+           Go Back
+        </Button>
         </div>
+        <div className="next-btn" variant="secondary">
+          <Button variant="btn-primary"
+           onClick={() => navigate("/addons")}>
+            Next Page
+          </Button>
+        </div>
+       </div>
       </div>
     </section>
   )

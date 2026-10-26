@@ -5,16 +5,17 @@ const Button = ({
     type = "button",
     onClick,
     variant = "primary",
-    disable = false
+    disabled = false
 }) => {
 
     return (
         <button 
         type={type}
         className={`btn btn-${variant}`}
-         disabled={disable}
+        disabled={disabled}
+        onClick={onClick}
         >
-            {children}
+        {children}
         </button>
     )
 }
