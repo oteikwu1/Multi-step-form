@@ -10,3 +10,110 @@
     gap: 1em;
     margin: 2em 0;
 }
+
+.plan-card {
+    border: 2px solid var(--Neutral-Purple-200);
+    width: 120px;
+    height: fit-content;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.plan-card.active {
+    background-color: var(--Neutral-Blue-100);
+    border: 2px solid var(--blue-950);
+}
+
+.plan-card-image {
+    display: block;
+    margin: 1em 0 1em 1em;
+}
+
+.plan-card h4 {
+    font-family: var(--Main-font);
+    color: var(--blue-950);
+    margin: 2em 0 .4em 1em; 
+}
+
+.plan-card p {
+  font-family: var(--Main-font);
+  color: var(--Neutral-Grey-500);
+  font-size: 1em;
+  margin: 0 0 .4em 1em;
+}
+
+.toggle-container {
+    background-color: var(--Neutral-Blue-100);
+    padding: 12px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+input[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.label {
+    cursor: pointer;
+    text-indent: -9999px; 
+    width: 55px;
+    height: 30px;
+    background: var(--blue-950);
+    display: block;
+    border-radius: 100px;
+    position: relative;
+    margin: 0 2em;
+}
+
+.label:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 100%;
+    transition: 0.3s;
+}
+
+input:checked + .label {
+    background: var(--blue-950);
+}
+
+input:checked + .label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+
+.label:active:after {
+    width: 40px;
+}
+
+.monthly-text {
+    font-family: var(--Main-font);
+    font-size: 1.2em;
+}
+
+input:checked~.monthly-text {
+    font-weight: bold;
+    font-family: var(--Main-font);
+}
+
+.yearly-text {
+  font-family: var(--Main-font);
+  color: var(--blue-950);
+}
+
+input:checked~.yearly-text {
+    font-weight: bold;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+}

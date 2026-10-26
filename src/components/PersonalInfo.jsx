@@ -70,7 +70,7 @@ const PersonalInfo = () => {
         <form action="" className="form" onSubmit={handleSubmit}>
           <div className={`name-group ${error.name ? "error" : ""}`}>
           <div className="label-container">
-            <label htmlFor="name">Name</label>
+            <label className="name-label" htmlFor="name">Name</label>
             {error.name && <p className="error-message">{error.name}</p>}
           </div>
             <input type="text"
@@ -84,7 +84,7 @@ const PersonalInfo = () => {
 
           <div className={`email-group ${error.email ? "error" : ""}`}>
             <div className="label-container">
-              <label htmlFor="email">Email Address</label>
+              <label htmlFor="email" className="name-label">Email Address</label>
               {error.email && <p className="error-message">{error.email}</p>}
             </div>
             <input type="email"
@@ -97,7 +97,7 @@ const PersonalInfo = () => {
           </div>
           <div className={`number-group ${error.phone ? "error" : ""}`}>
             <div className="label-container">
-              <label htmlFor="number">Phone Number</label>
+              <label className="name-label" htmlFor="number">Phone Number</label>
               {error.phone && <p className="error-message">{error.phone}</p>}
             </div>
             <input type="tel"
