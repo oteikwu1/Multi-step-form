@@ -4,3 +4,16 @@
     padding: 20px;
     background-color: var(--Neutral-White);
 }
+
+.add-on-heading {
+    font-family: var(--Main-font);
+    color: var(--blue-950);
+    margin-top: 1em;
+}
+
+.add-on-title {
+    font-family: var(--Main-font);
+    font-size: 1em;
+    color: var(--Neutral-Grey-500);
+    margin: .4em 0;
+}
