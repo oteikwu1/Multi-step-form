@@ -25,10 +25,11 @@ const AddsOn = () => {
             </p>
           <div className="service-container">
             <div className="online-service">
-              <label htmlFor="online-service">
+              <label htmlFor="online-service" className="add-on-label"></label>
               <input 
               type="checkbox"
               id="online-service"
+              className="add-on-checkbox"
               value="online-service"
               checked={isChecked.includes('online-service')}
               onChange={handleCheckboxChange}
@@ -37,15 +38,15 @@ const AddsOn = () => {
                 <h3>Online service</h3>
                 <p>Access to multiplayer games</p>
               </div>
-               <span> +1$/mo</span>
-              </label>
+               <span className="add-on-price">+1$/mo</span>
             </div>
 
            <div className="large-storage">
-              <label htmlFor="large-storage">
+              <label htmlFor="large-storage"></label>
               <input 
               type="checkbox"
               id="large-storage"
+              className="add-on-checkbox"
               value="large-storage"
               checked={isChecked.includes('large-storage')}
               onChange={handleCheckboxChange}
@@ -54,15 +55,15 @@ const AddsOn = () => {
                 <h3>Large storage</h3>
                 <p>Extra 1TB of cloud service</p>
               </div>
-              <span>+2$/mo</span>
-              </label>
+              <span className="add-on-price">+2$/mo</span>
             </div>
 
            <div className="customizable-profile">
-              <label htmlFor="">
+              <label htmlFor=""></label>
               <input 
               type="checkbox"
               value="customizable-profile"
+              className="add-on-checkbox"
               checked={isChecked.includes('customizable-profile')}
               onChange={handleCheckboxChange}
               />
@@ -70,8 +71,7 @@ const AddsOn = () => {
                 <h3>Customizable Profile</h3>
                 <p>Custom theme on your profile</p>
               </div>
-              <span>+2$/mo</span>
-              </label>
+              <span className="add-on-price">+2$/mo</span>
             </div>
           </div>
         </div>

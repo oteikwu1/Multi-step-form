@@ -1,11 +1,12 @@
-* {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 :root {
- --blue-950: hsl(213, 96%, 18%);
  --Primary-Blue-950: hsl(213, 96%, 18%);
  --Primary-Purple-600: hsl(243, 100%, 62%); 
  --Primary-Blue-300: hsl(228, 100%, 84%); 
@@ -50,21 +51,9 @@
  
 }
 
-body {
-  margin: 0;
-  background-color: var(--Neutral-Blue-100);
-}
 
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
+
 
 
 

@@ -5,6 +5,11 @@
     background-color: var(--Neutral-White);
 }
 
+.content-container {
+   max-width: 100%;
+   width: 100%;
+}
+
 .add-on-heading {
     font-family: var(--Main-font);
     color: var(--blue-950);
@@ -16,4 +21,47 @@
     font-size: 1em;
     color: var(--Neutral-Grey-500);
     margin: .4em 0;
+}
+
+.online-service,
+.customizable-profile,
+.large-storage {
+    display: flex;
+    align-items: center;
+    background-color: var(--Neutral-Blue-100);
+    border: 1.6px solid var(--Neutral-Grey-500);
+    border-radius: 8px;
+    padding: 1em;
+    margin: .9em 0;
+    width: 100%;
+    max-width: 500px;
+}
+
+.add-on-checkbox {
+    transform: scale(1.6);
+    cursor: pointer;
+    margin-right: 24px;
+}
+
+.online-service h3,
+.large-storage h3,
+.customizable-profile h3 {
+    font-family: var(--Main-font);
+    color: var(--Primary-Blue-950);
+}
+
+.online-service p,
+.large-storage p,
+.customizable-profile p {
+    font-family: var(--Main-font);
+    font-size: 1em;
+    color: var(--Neutral-Grey-500);
+    margin: 4px 0;
+}
+
+.add-on-price {
+    font-family: var(--Main-font);
+    color: var(--Primary-Purple-600);
+    text-align: end;
+    margin-left: auto;
 }
