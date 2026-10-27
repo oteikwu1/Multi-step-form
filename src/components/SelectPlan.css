@@ -21,7 +21,7 @@
 .select-plan-title {
     font-family: var(--Main-font);
     color: var(--Neutral-Purple-200);
-    color: blueviolet;
+    font-size: 1em;
 }
 
 .plan-card {
@@ -133,5 +133,38 @@ input:checked~.yearly-text {
 
 
 @media screen and (max-width: 600px) {
-    
+    .main-container {
+        flex-direction: column;
+        gap: 0;
+        background-color: var(--Neutral-Blue-100);
+        position: relative;
+    }
+
+    .content-container {
+        background-color: var(--Neutral-White);
+       z-index: 1000;
+       margin: -100px 20px 0 20px;
+       border-radius: 8px;
+       padding: 20px;
+    }
+
+    .select-plan-heading {
+       font-size: 1.4em;
+    }
+
+    .plan-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .plan-card {
+      width: 300px;
+      display: flex;
+
+    }
+
+   .plan-card h4 {
+    margin: .6em 0 .4em 1em;
+   }
 }

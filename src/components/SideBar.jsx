@@ -18,7 +18,6 @@ const SideBar = ({activeStep}) => {
     </div>
 
     <div className="step-two-container">
-
         <div className={`step-circle ${activeStep === 2 ? "active" : ""}`}>
             <span>2</span>
         </div>
@@ -28,7 +27,8 @@ const SideBar = ({activeStep}) => {
             <h2 className="step-title">select plan</h2>
         </div>
     </div>
-
+    <div className="step three-container">
+        
      <div className={`step-circle ${activeStep === 3 ? "active" : ""}`}>
         <span>3</span>
      </div>
@@ -37,15 +37,18 @@ const SideBar = ({activeStep}) => {
         <p className="step-label">Step 3</p>
         <h2 className="step-title">add-ons</h2>
     </div>
-
-<div className={`step-circle ${activeStep === 3 ? "active" : ""}`}>
+    </div>
+   
+   <div className="step-four-container">
+    <div className={`step-circle ${activeStep === 4 ? "active" : ""}`}>
     <span>4</span>
 </div>
 
- <div className="step-content">
-    <p className="step-label">Step 4</p>
-    <h2 className="step-title">summary</h2>
-</div>
+    <div className="step-content">
+        <p className="step-label">Step 4</p>
+        <h2 className="step-title">summary</h2>
+    </div>
+   </div>
 
 </div>
 </div>

@@ -34,24 +34,30 @@ const SelectPlan = () => {
             onClick={() => handPlanName('arcade')}
             >
               <img className="plan-card-image" src={arcade} alt="arcade icon" />
-              <h4>Arcade</h4>
+              <div>
+                <h4>Arcade</h4>
               <p>$9/mo</p>
+              </div>
             </div>
 
             <div className={`plan-card ${selectPLan === "advance" ? "active" : ""}`}
             onClick={() => handPlanName('advance')}
             >
               <img className="plan-card-image" src={advance} alt="advance icon" />
-              <h4>Advance</h4>
-              <p>$12/mo</p>
+              <div>
+                <h4>Advance</h4>
+                <p>$12/mo</p>
+              </div>
             </div>
 
             <div className={`plan-card ${selectPLan === "pro" ? "active" : ""}`}
              onClick={() => handPlanName("pro")}
             >
               <img className="plan-card-image" src={pro} alt="pro icon" />
-              <h4>Pro</h4>
+             <div>
+               <h4>Pro</h4>
               <p>$15/mo</p>
+             </div>
             </div>
         </div>
 

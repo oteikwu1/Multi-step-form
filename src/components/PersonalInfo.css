@@ -32,6 +32,15 @@
 
 label {
     font-family: var(--Main-font);
+    margin: 20px 0;
+}
+
+.name-label {
+    font-size: 1em;
+}
+
+#name, #email, 
+#number{
     margin: 6px 0;
 }
 
@@ -46,6 +55,16 @@ input[type=tel] {
 
 input[type=text]::placeholder {
     font-size: var(--Font-weight-md);
+}
+
+.error-message {
+    font-family: var(--Main-font);
+    color: var(--Primary-Red-500);
+    font-family: .6em;
+    text-align: end;
+    display: inline-block;
+    padding-left: 120px;
+    margin-bottom: 6px;
 }
 
 .btn-container {
