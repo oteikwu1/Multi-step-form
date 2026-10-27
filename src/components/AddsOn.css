@@ -5,8 +5,8 @@
     background-color: var(--Neutral-White);
 }
 
-.content-container {
-   max-width: fit-content;
+.addon-on-content-container {
+   max-width: 500px;
    width: 100%;
 }
 
@@ -23,19 +23,6 @@
     margin: .4em 0;
 }
 
-.online-service,
-.customizable-profile,
-.large-storage {
-    display: flex;
-    align-items: center;
-    background-color: var(--Neutral-Blue-100);
-    border: 1.6px solid var(--Neutral-Grey-500);
-    border-radius: 8px;
-    padding: 1em;
-    margin: .9em 0;
-    width: 100%;
-    max-width: 500px;
-}
 
 .add-on-checkbox {
     transform: scale(1.6);
@@ -43,25 +30,61 @@
     margin-right: 24px;
 }
 
-.online-service h3,
-.large-storage h3,
-.customizable-profile h3 {
-    font-family: var(--Main-font);
-    color: var(--Primary-Blue-950);
+
+.service-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.online-service p,
-.large-storage p,
-.customizable-profile p {
-    font-family: var(--Main-font);
-    font-size: 1em;
-    color: var(--Neutral-Grey-500);
-    margin: 4px 0;
+.addon-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #d6d9e6;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
 }
+
+.addon-card:hover {
+    border-color: #483eff;
+}
+
+.addon-card.active {
+    border-color: #483eff;
+    background-color: #f8f7ff;
+}
+
+.add-on-checkbox {
+    width: 18px;
+    height: 18px;
+    accent-color: #483eff;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.addon-description {
+    flex: 1;
+}
+
+.addon-description h3 {
+    margin: 0 0 5px;
+    font-size: 16px;
+    color: #02295a;
+}
+
+.addon-description p {
+    margin: 0;
+    font-size: 14px;
+    color: #9699ab;
+}
+
 
 .add-on-price {
-    font-family: var(--Main-font);
-    color: var(--Primary-Purple-600);
-    text-align: end;
-    margin-left: auto;
+    color: #483eff;
+    font-size: 14px;
+    white-space: nowrap;
 }

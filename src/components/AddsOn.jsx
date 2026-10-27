@@ -1,98 +1,129 @@
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
-import SideBar from "./SideBar"
-import './AddsOn.css'
-import Button from "./Button"
+
+import { useFormData } from "./FormContext";
+import { useNavigate } from "react-router-dom";
+import SideBar from "./SideBar";
+import Button from "./Button";
+import "./AddsOn.css";
+
+const addonPrices = {
+  monthly: {
+    "online-service": 1,
+    "large-storage": 2,
+    "customizable-profile": 2,
+  },
+  yearly: {
+    "online-service": 10,
+    "large-storage": 20,
+    "customizable-profile": 20,
+  },
+};
+
+const addonDetails = [
+  {
+    id: "online-service",
+    title: "Online service",
+    description: "Access to multiplayer games",
+  },
+  {
+    id: "large-storage",
+    title: "Large storage",
+    description: "Extra 1TB of cloud service",
+  },
+  {
+    id: "customizable-profile",
+    title: "Customizable Profile",
+    description: "Custom theme on your profile",
+  },
+];
 
 const AddsOn = () => {
-   const navigate = useNavigate()
-  const [isChecked, setIsChecked] = useState([])
+  const navigate = useNavigate();
+
+  const {
+    isYearly,
+    selectedAddons,
+    setSelectedAddons,
+  } = useFormData();
+
+  const price = isYearly
+    ? addonPrices.yearly
+    : addonPrices.monthly;
 
   const handleCheckboxChange = (e) => {
-     const {value, checked} = e.target
+    const { value, checked } = e.target;
 
-     if(checked) {
-      setIsChecked((prev) => [...prev, value]) 
-     }else {
-      setIsChecked((prev) => prev.filter((item) => item !== value))
-     }
-  }
-    return (
-      <section className="add-on-container">
-        <SideBar activeStep={3} />
+    setSelectedAddons((prev) =>
+      checked
+        ? [...prev, value]
+        : prev.filter((item) => item !== value)
+    );
+  };
 
-        <div className="content-container">
-            <h2 className="add-on-heading">Picks add-ons</h2>
-            <p className="add-on-title">
-              Add-ons helps enhance gaming experience
-            </p>
-          <div className="service-container">
-            <div className="online-service">
-              <label htmlFor="online-service" className="add-on-label"></label>
-              <input 
-              type="checkbox"
-              id="online-service"
-              className="add-on-checkbox"
-              value="online-service"
-              checked={isChecked.includes('online-service')}
-              onChange={handleCheckboxChange}
+  return (
+    <section className="add-on-container">
+      <SideBar activeStep={3} />
+
+      <div className="addon-on-content-container">
+        <h2 className="add-on-heading">Pick add-ons</h2>
+
+        <p className="add-on-title">
+          Add-ons help enhance your gaming experience
+        </p>
+
+        <div className="service-container">
+          {addonDetails.map((addon) => (
+            <label
+              key={addon.id}
+              htmlFor={addon.id}
+              className={`addon-card ${
+                selectedAddons.includes(addon.id)
+                  ? "active"
+                  : ""
+              }`}
+            >
+              <input
+                type="checkbox"
+                id={addon.id}
+                className="add-on-checkbox"
+                value={addon.id}
+                checked={selectedAddons.includes(addon.id)}
+                onChange={handleCheckboxChange}
               />
-              <div>
-                <h3>Online service</h3>
-                <p>Access to multiplayer games</p>
-              </div>
-               <span className="add-on-price">+1$/mo</span>
-            </div>
 
-           <div className="large-storage">
-              <label htmlFor="large-storage"></label>
-              <input 
-              type="checkbox"
-              id="large-storage"
-              className="add-on-checkbox"
-              value="large-storage"
-              checked={isChecked.includes('large-storage')}
-              onChange={handleCheckboxChange}
-              />
-              <div>
-                <h3>Large storage</h3>
-                <p>Extra 1TB of cloud service</p>
+              <div className="addon-description">
+                <h3>{addon.title}</h3>
+                <p>{addon.description}</p>
               </div>
-              <span className="add-on-price">+2$/mo</span>
-            </div>
 
-           <div className="customizable-profile">
-              <label htmlFor=""></label>
-              <input 
-              type="checkbox"
-              value="customizable-profile"
-              className="add-on-checkbox"
-              checked={isChecked.includes('customizable-profile')}
-              onChange={handleCheckboxChange}
-              />
-              <div>
-                <h3>Customizable Profile</h3>
-                <p>Custom theme on your profile</p>
-              </div>
-              <span className="add-on-price">+2$/mo</span>
-            </div>
-          </div>
-            <div className="btn-container">
+              <span className="add-on-price">
+                +${price[addon.id]}/{isYearly ? "yr" : "mo"}
+              </span>
+            </label>
+          ))}
+        </div>
+
+        <div className="btn-container">
           <div className="back-btn">
-            <Button variant="neutral"
-            onClick={() => navigate(-1)}>
+            <Button
+              variant="neutral"
+              onClick={() => navigate(-1)}
+            >
               Go Back
             </Button>
           </div>
+
           <div className="next-btn">
-            <Button>
+            <Button
+              variant="primary"
+              onClick={() => navigate("/summary")}
+            >
               Next Page
             </Button>
           </div>
         </div>
-        </div>
-      </section>
-    )
-}
+      </div>
+    </section>
+  );
+};
 
-export default AddsOn
+export default AddsOn;

@@ -75,7 +75,7 @@
     text-indent: -9999px; 
     width: 55px;
     height: 30px;
-    background: var(--blue-950);
+    background: var(--Primary-Blue-950);
     display: block;
     border-radius: 100px;
     position: relative;
@@ -95,7 +95,7 @@
 }
 
 input:checked + .label {
-    background: var(--blue-950);
+    background: var(--Primary-Blue-950);
 }
 
 input:checked + .label:after {

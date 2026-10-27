@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useFormData } from "./FormContext"
 import { useNavigate } from "react-router-dom"
 import SideBar from "./SideBar"
 import arcade from '../assets/icon-arcade.svg'
@@ -8,15 +9,16 @@ import Button from "./Button"
 import './SelectPlan.css'
 
 
+
 const SelectPlan = () => {
   const navigate = useNavigate();
 
-  const [selectPLan, setSelectPlan] = useState("arcade")
-  const [isToggled, setIsToggled] = useState(false)
-
-  const handPlanName = (planName) => {
-    setSelectPlan(planName)
-  }
+  const {
+  selectedPlan,
+  setSelectedPlan,
+  isYearly,
+  setIsYearly,
+} = useFormData();
 
   return (
     <section className="main-container">
@@ -29,9 +31,12 @@ const SelectPlan = () => {
           </p>
           
         <div className="plan-container">
-            <div className={`plan-card ${selectPLan === "arcade" ? "active" : ""}`}
-            onClick={() => handPlanName('arcade')}
-            >
+          <div
+            className={`plan-card ${
+                selectedPlan === "arcade" ? "active" : ""
+              }`}
+              onClick={() => setSelectedPlan("arcade")}
+              >
               <img className="plan-card-image" src={arcade} alt="arcade icon" />
               <div>
                 <h4>Arcade</h4>
@@ -39,9 +44,12 @@ const SelectPlan = () => {
               </div>
             </div>
 
-            <div className={`plan-card ${selectPLan === "advance" ? "active" : ""}`}
-            onClick={() => handPlanName('advance')}
-            >
+          <div
+          className={`plan-card ${
+            selectedPlan === "advance" ? "active" : ""
+          }`}
+          onClick={() => setSelectedPlan("advance")}
+        >
               <img className="plan-card-image" src={advance} alt="advance icon" />
               <div>
                 <h4>Advance</h4>
@@ -49,10 +57,13 @@ const SelectPlan = () => {
               </div>
             </div>
 
-            <div className={`plan-card ${selectPLan === "pro" ? "active" : ""}`}
-             onClick={() => handPlanName("pro")}
+            <div
+              className={`plan-card ${
+                selectedPlan === "pro" ? "active" : ""
+              }`}
+              onClick={() => setSelectedPlan("pro")}
             >
-              <img className="plan-card-image" src={pro} alt="pro icon" />
+            <img className="plan-card-image" src={pro} alt="pro icon" />
              <div>
                <h4>Pro</h4>
               <p>$15/mo</p>
@@ -65,8 +76,8 @@ const SelectPlan = () => {
           <input 
             type="checkbox" 
             id="switch" 
-            checked={isToggled} 
-            onChange={(e) => setIsToggled(e.target.checked)} 
+           checked={isYearly}
+           onChange={(e) => setIsYearly(e.target.checked)}
           />
           <label htmlFor="switch" className="label"></label>
           <p className="yearly-text">Yearly</p>
