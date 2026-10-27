@@ -5,7 +5,6 @@ import arcade from '../assets/icon-arcade.svg'
 import advance from '../assets/icon-advanced.svg'
 import pro from '../assets/icon-pro.svg'
 import Button from "./Button"
-import './Button.css'
 import './SelectPlan.css'
 
 
@@ -75,13 +74,13 @@ const SelectPlan = () => {
 
        <div className="btn-container">
         <div className="back-btn">
-           <Button variant="btn-secondary" 
+           <Button variant="neutral" 
            onClick={() => navigate(-1)}>
            Go Back
         </Button>
         </div>
         <div className="next-btn" variant="secondary">
-          <Button variant="btn-primary"
+          <Button variant="primary"
            onClick={() => navigate("/addons")}>
             Next Page
           </Button>

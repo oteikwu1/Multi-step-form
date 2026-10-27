@@ -6,8 +6,14 @@
   font-family: var(--Main-font);
 }
 
+.btn-neutral {
+  background-color: transparent;
+  font-weight: var(--Font-weight-b);
+  font-size: 1em;
+}
+
 .btn-primary {
-  background-color: var(--blue-950);
+  background-color: var(--Primary-Blue-950);
   border-radius: 6px;
   color: var(--Neutral-White);
   font-weight: var(--Font-weight-b);
@@ -15,6 +21,6 @@
 
 .btn-secondary {
   color: var(--Neutral-Purple-200);
-  background-color: brown;
-  font-size: 4em;
+  background-color: var(--Primary-Red-500);
+  font-size: 1.2em;
 }

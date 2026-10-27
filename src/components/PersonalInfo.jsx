@@ -4,7 +4,6 @@ import "./PersonalInfo.css"
 import Button from "./Button";
 import './Button.css'
 import SideBar from "./SideBar";
-import './SideBar.css'
 
 
 const PersonalInfo = () => {
@@ -109,12 +108,11 @@ const PersonalInfo = () => {
               />
           </div>
            <div className="btn-container">
-            <Button variant="primary" type="submit">
-              Next Step
+            <Button type="submit">
+              Next page
             </Button>
          </div>
         </form>
-      
         </div>
     </section>
     )

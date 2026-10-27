@@ -1,23 +1,27 @@
+import './Button.css'
 
-import './button.css'
+
+import "./Button.css";
+
 const Button = ({
-    children,
-    type = "button",
-    onClick,
-    variant = "primary",
-    disabled = false
+  children,
+  type = "button",
+  onClick,
+  variant = "primary",
+  disabled = false,
 }) => {
+  return (
+    <button
+      type={type}
+      className={`btn btn-${variant}`}
+      disabled={disabled}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+};
 
-    return (
-        <button 
-        type={type}
-        className={`btn btn-${variant}`}
-        disabled={disabled}
-        onClick={onClick}
-        >
-        {children}
-        </button>
-    )
-}
+export default Button;
 
-export default Button
+

@@ -1,14 +1,17 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import SideBar from "./SideBar"
 import './AddsOn.css'
+import Button from "./Button"
 
 const AddsOn = () => {
+   const navigate = useNavigate()
   const [isChecked, setIsChecked] = useState([])
 
   const handleCheckboxChange = (e) => {
-     const {value, check} = e.target.value
+     const {value, checked} = e.target
 
-     if(check) {
+     if(checked) {
       setIsChecked((prev) => [...prev, value]) 
      }else {
       setIsChecked((prev) => prev.filter((item) => item !== value))
@@ -74,6 +77,19 @@ const AddsOn = () => {
               <span className="add-on-price">+2$/mo</span>
             </div>
           </div>
+            <div className="btn-container">
+          <div className="back-btn">
+            <Button variant="neutral"
+            onClick={() => navigate(-1)}>
+              Go Back
+            </Button>
+          </div>
+          <div className="next-btn">
+            <Button>
+              Next Page
+            </Button>
+          </div>
+        </div>
         </div>
       </section>
     )
